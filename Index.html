@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-dhdfghdd    
+<head>   
 <meta charset="UTF-8">
 <title>Christ's College Uniform Shop</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -101,11 +100,11 @@ align-items: center;
 
 .dropbtn:hover {
 background-color: #555;
-padding: 0px; /* Adjust the padding as needed */
+padding: 0px;
 }
 
 .dropbtn img {
-width: 60px; /* Adjust the width as needed */
+width: 60px;
 height: auto;
 }
 
@@ -143,9 +142,11 @@ left: 20px;
 top: 20px;
 }
     
-.search-container {
+ .search-container {
+display: flex;
+align-items: center;
 position: absolute;
-top: 20px;
+top: 30px;
 right: 20px;
 }
 
@@ -155,7 +156,8 @@ border-radius: 4px;
 border: none;
 }
 
-.search-container .search-button {
+.search-container .search-button,
+.search-container .cart-button {
 padding: 8px 12px;
 background-color: #333;
 color: #fff;
@@ -163,7 +165,29 @@ border: none;
 border-radius: 4px;
 cursor: pointer;
 }
-        
+    
+.search-container .search-button:hover {
+background-color: #555;
+}
+     
+.cart-button {
+background-color: #333;
+color: #fff;
+padding: 8px 12px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+margin-left: 1px;
+}
+
+.cart-button:hover {
+background-color: #555;
+}
+
+.cart-button i {
+font-size: 16px;
+}
+    
 </style>
 </head>
     
@@ -177,6 +201,13 @@ cursor: pointer;
 <button class="search-button">
 <i class="fas fa-search"></i>
 </button>
+    
+
+<form action="cart.html">
+<button type="submit" class="cart-button">
+<i class="fas fa-shopping-cart"></i>
+</button>
+</form>
 </div>
   
 <button class="dropbtn">

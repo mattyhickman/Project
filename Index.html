@@ -1,321 +1,382 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Defines the document type as HTML5 -->
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Christ's College Uniform Shop</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="https://gcdnb.pbrd.co/images/YJlixsuqMuE6.png?o=1" type="image/x-icon">
-    <style>
+    <meta charset="UTF-8"> <!-- This sets the character encoding to UTF-8 for special characters -->
+    <title>Christ's College Uniform Shop</title> <!-- This names the webpage that appears in the browser tab -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link to font-awesome, an icon library allowing icons to be added to the page -->
+    <link rel="icon" href="https://gcdnb.pbrd.co/images/mg4mI4hFp5vy.png?o=1" type="image/x-icon"> <!-- This sets a small image (favicon) for the browser tab -->
+    <style> /* This starts defining the page's style */
     
+        /* Reset default browser styles for body section */
         body {
-            font-family: Georgia, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: Georgia, sans-serif; /* Sets the default font family */
+            margin: 0; /* Removes default margins */
+            padding: 0; /* Removes default padding */
+
         }
         
+        /* Styles the header section */
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
+            background-color: #333; /* Sets background colour to dark gray */
+            color: #fff; /* Sets text colour to white */
+            padding: 20px; /* Adds space around the content */
+            text-align: center; /* Center-aligns the text */
         }
 
+        /* Defines CSS rules for the logo */
         .logo {
-            width: 110px;
-            height: auto;
+            width: 110px; /* Sets the logo's width */
+            height: auto; /* Maintains the logo's aspect ratio */
         }
         
+        /* Resets margin for h1 element */
         h1 {
-            margin: 0;
+            margin: 0; /* Removes margin for the main title */
         }
         
+        /* Defines styles for the main container */
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            max-width: 1500px; /* Set a maximum width for the content */
+            margin: 0 auto; /* Center the content horizontally */
+            padding: 20px; /* Add space around the content */
+            display: flex; /* Use flex layout */
+            flex-wrap: wrap; /* Wrap items if they don't fit in a row */
+            justify-content: center; /* Center-align content horizontally */
+          
         }
         
+         /* Styles individual product items */
         .product {
-            width: 23%;
-            height: 400px;
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            width: 20%; /* Sets the width of each product item */
+            height: 400px; /* Sets the height of each product item */
+            margin-bottom: 20px; /* Adds space below each product item */
+            margin-right: 10px; /* Adds space to the right of each product item */
+            padding: 10px; /* Adds space inside each product item */
+            border: 1px solid #ddd; /* Adds a light border around each product item */
+            border-radius: 4px; /* Makes the corners slightly rounded */
+
         }
         
+        /* Styles product images */
         .product img {
-            width: 100%;
-            height: 60%;
-            object-fit: contain;
-            border-radius: 4px;
+            width: 100%; /* Makes the image fill the product box width */
+            height: 60%; /* Sets the image height */
+            object-fit: contain; /* Maintains the image's proportions */
+            border-radius: 4px; /* Rounds the image corners */
         }
         
+        /* Defines styles for product details */
         .product .details {
-            height: 40%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-align: center;
+            height: 40%; /* Allocates space for product information */
+            display: flex; /* Uses flex layout */
+            flex-direction: column; /* Arranges details in a column */
+            justify-content: space-between; /* Spreads out details vertically */
+            text-align: center; /* Center-aligns text */
         }
         
+        /* Resets margins for h2 and p elements inside product details */
         .product .details h2,
         .product .details p {
-            margin: 0;
+            margin: 0; /* Removes margins for titles and descriptions */
         }
         
+        /* Styles the "Add to Cart" button */
         .button {
-            display: inline-block;
-            background-color: #333;
-            color: #fff;
-            padding: 8px 16px;
-            text-decoration: none;
-            border-radius: 4px;
+            display: inline-block; /* Displays the button inline with text */
+            background-color: #333; /* Sets the button background colour to dark gray */
+            color: #fff; /* Sets the button text colour to white */
+            padding: 8px 16px; /* Adds space inside the button */
+            text-decoration: none; /* Removes underline from text links */
+            border-radius: 4px; /* Makes button corners slightly round */
         }
         
+        /* Styles "Add to Cart" button hover state */
         .button:hover {
-            background-color: #555;
+            background-color: #555; /* Change button colour when hovering */
         }
         
+        /* Styles the footer section */
         footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            margin-top: 20px;
+            background-color: #333; /* Sets the background colour to dark gray */
+            color: #fff; /* Sets the text colour to white */
+            padding: 20px; /* Adds space around the content */
+            text-align: center; /* Center-aligns the text */
+            margin-top: 20px; /* Adds space at the top */
+
         }
         
+        /* Styles the dropdown menu */
         .dropdown {
-            position: relative;
-            display: inline-block;
+            position: relative; /* Sets the position to relative for the dropdown */
+            display: inline-block; /* Displays the dropdown inline with other content */
         }
 
+        /* Styles the dropdown button */
         .dropbtn {
-            background-color: #333;
-            color: #fff;
-            padding: 0px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            transition: background-color 0.3s;
+            background-color: #333; /* Sets the buttons background colour to dark gray */
+            color: #fff; /* Sets button colour to white */
+            padding: 0px; /* Removes padding inside the button */
+            font-size: 16px; /* Sets the button size */
+            border: none; /* Removes the button border */
+            cursor: pointer; /* Changes the cursor to a hand when hovering */
+            display: flex; /* Allows elements to be displayed horizontally */
+            align-items: center; /* Centers content vertically */
+            transition: background-colour 0.3s; /* Smoothly changes button background colour */
         }
 
+        /* Styles dropdown button hover state */
         .dropbtn:hover {
-            background-color: #555;
-            padding: 0px;
+            background-color: #555; /* Changes button colour when hovering */
+            padding: 0px; /* Removes padding inside the button */
         }
 
+        /* Adjusts the dropdown button image size */
         .dropbtn img {
-            width: 60px;
-            height: auto;
+            width: 60px; /* Sets the image width */
+            height: auto; /* Maintains image's aspect ratio */
         }
 
+        /* Defines styles for the dropdown content */
         .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
+            display: none; /* Initially hides the dropdown content */
+            position: absolute; /* Positions dropdown content absolutely */
+            background-color: #f9f9f9; /* Sets the background color to light gray */
+            min-width: 160px; /* Sets a minimum width for the dropdown content */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Adds a shadow to the dropdown content */
+            z-index: 1; /* Sets the stacking order */
         }
 
+        /* Styles links inside the dropdown */
         .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
+            color: black; /* Sets link colour to black */
+            padding: 12px 16px; /* Adds padding around the link */
+            text-decoration: none; /* Removes underline from links */
+            display: block; /* Display links as blocks */
         }
 
+        /* Styles links inside the dropdown when hovering */
         .dropdown-content a:hover {
-            background-color: #f1f1f1;
+            background-color: #f1f1f1; /* Changes link background colour when hovering */
         }
 
+        /* Displays the dropdown content when hovering over the dropdown button */
         .dropdown:hover .dropdown-content {
-            display: block;
+            display: block; /* Shows the dropdown content */
         }
 
+        /* Styles the dropdown button when hovering */
         .dropdown:hover .dropbtn {
-            background-color: #555;
+            background-color: #555; /* Changes button colour when hovering */
         }
         
+        /* Positions the menu container */
         .menu-container {
-            position: absolute;
-            left: 20px;
-            top: 20px;
+            position: absolute; /* Position absolutely */
+            left: 20px; /* Sets the left offset */
+            top: 20px; /* Sets the top offset */
         }
     
+        /* Styles the search container */
         .search-container {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            top: 30px;
-            right: 20px;
+            display: flex; /* Uses flex layout */
+            align-items: center; /* Center-aligns content vertically */
+            position: absolute; /* Positions absolutely */
+            top: 30px; /* Sets the top offset */
+            right: 20px; /* Sets the right offset */
         }
 
+        /* Styles the search bar */
         .search-container input[type="text"] {
-            padding: 8px;
-            border-radius: 4px;
-            border: none;
+            padding: 8px; /* Adds padding to the search bar */
+            border-radius: 4px; /* Makes search bars corners slightly rounded */
+            border: none; /* Removes the search bar border */
         }
 
+        /* Style search and cart buttons */
         .search-container .search-button,
         .search-container .cart-button {
-            padding: 8px 12px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            padding: 8px 12px; /* Adds space around the buttons */
+            background-color: #333; /* Sets buttons background colours to dark gray */
+            color: #fff; /* Sets buttons text colours to white */
+            border: none; /* Removes the buttons borders */
+            border-radius: 4px; /* Makes buttons corners slightly rounded */
+            cursor: pointer; /* Changes the cursor to a hand when hovering over buttons */
         }
     
+         /* Styles the search button hover state */
         .search-container .search-button:hover {
-            background-color: #555;
+            background-color: #555; /* Changes button colour to dark gray when hovering */
         }
      
+        /* Styles the cart button */
         .cart-button {
-            background-color: #333;
-            color: #fff;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-left: 1px;
+            background-color: #333; /* Sets button background colour to dark gray */
+            color: #fff; /* Sets button colour to white */
+            padding: 8px 12px; /* Adds space around the button */
+            border: none; /* Removes the button border */
+            border-radius: 4px; /* Makes button corners slightly rounded */
+            cursor: pointer; /* Changes the cursor to a hand when hovering */
+            margin-left: 1px; /* Adds a small gap to the left */
         }
 
+        /* Styles the cart button hover state */
         .cart-button:hover {
-            background-color: #555;
+            background-color: #555; /* Changes cart button colour when hovering */
         }
 
+        /* Adjusts the cart button size */
         .cart-button i {
-            font-size: 16px;
+            font-size: 16px; /* Sets the cart button size */
         }
     
     </style>
 </head>
     
-<body>
-    <header>
-        <a href="index.html">
-            <img src="https://gcdnb.pbrd.co/images/YJlixsuqMuE6.png?o=1" alt="Logo" class="logo">
+<body> <!-- Defines the main body section of the page -->
+    <header> <!-- Defines the header section at the top of the page -->
+        <a href="index.html"> <!-- Creates a link to the homepage -->
+            <img src="https://gcdnb.pbrd.co/images/mg4mI4hFp5vy.png?o=1" alt="Logo" class="logo"> <!-- Displays the logo image and attatches an alternative text -->
         </a> 
-        <h1>CC Uniform Shop</h1>
-        <div class="search-container">
-            <input type="text" placeholder="Search">
-            <button class="search-button">
-                <i class="fas fa-search"></i>
+        <h1>CC Uniform Shop</h1> <!-- Displays the main title of the website -->
+        <div class="search-container"> <!-- This division contains the search bar and cart button -->
+            <input type="text" placeholder="Search"> <!-- Creates the search bar -->
+            <button class="search-button"> <!-- Creates a search button -->
+                <i class="fas fa-search"></i> <!-- Adds a search icon -->
             </button>
-            <form action="cart.html">
-                <button type="submit" class="cart-button">
-                    <i class="fas fa-shopping-cart"></i>
+            <form action="cart.html"> <!-- Creates a form for the shopping cart -->
+                <button type="submit" class="cart-button"> <!-- This line creates a button for the shopping cart -->
+                    <i class="fas fa-shopping-cart"></i> <!-- Adds a shopping cart icon -->
                 </button>
             </form>
         </div>
-        <button class="dropbtn">
-            <span class="menu-icon"></span>
+        <button class="dropbtn"> <!-- Creates a dropdown button -->
+            <span class="menu-icon"></span> <!-- Adds a menu icon -->
         </button>
-        <div class="menu-container">
-            <div class="dropdown">
-                <button class="dropbtn">
-                    <img src="https://icon-library.com/images/white-menu-icon-png/white-menu-icon-png-18.jpg" alt="Menu Icon">
+        <div class="menu-container"> <!-- This division contains the dropdown menu -->
+            <div class="dropdown"> <!-- This divison defines the dropdown menu -->
+                <button class="dropbtn"> <!-- Creates the dropdown button -->
+                    <img src="https://icon-library.com/images/white-menu-icon-png/white-menu-icon-png-18.jpg" alt="Menu Icon"> <!-- Adds a menu icon image -->
                 </button>
-                <div class="dropdown-content">
-                    <a href="https://christscollege.com/">Home</a>
-                    <a href="https://online.flippingbook.com/view/221547692/">About</a>
-                    <a href="Index.html">Uniform</a>
+                <div class="dropdown-content"> <!-- This division defines the dropdown content -->
+                    <a href="https://christscollege.com/">Home</a> <!-- Creates a link to Christ's College homepage -->
+                    <a href="https://online.flippingbook.com/view/221547692/">About</a> <!-- Creates a link to the CC Uniform Shop Booklet -->
+                    <a href="Index.html">Uniform</a> <!-- Creates a link to the main uniform shop page -->
                 </div>
             </div>
         </div>
     </header>
-    <div class="container">
-        <div class="product">
-            <img src="https://gcdnb.pbrd.co/images/BWmJDAGjOCXS.png?o=1" alt="Junior Blazer Image">
-            <div class="details">
-                <h2>Junior Blazer</h2>
-                <p>Black and white striped</p>
-                <p>Price: $350</p>
-                <a href="#" class="button">Add to Cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="https://gcdnb.pbrd.co/images/6c3XK9TfVrKE.png?o=1" alt="Senior Blazer Image">
-            <div class="details">
-                <h2>Senior Blazer</h2>
-                <p>Black and white striped</p>
-                <p>Price: $350</p>
-                <a href="#" class="button">Add to Cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="https://gcdnb.pbrd.co/images/8RmxGsMCHt1R.png?o=1" alt="Formal Jacket Image">
-            <div class="details">
-                <h2>Formal Jacket</h2>
-                <p>Dark Grey</p>
-                <p>Price: $265</p>
-                <a href="#" class="button">Add to Cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="https://gcdnb.pbrd.co/images/1zox7lAycOnB.png?o=1" alt="Formal Trousers Image">
-            <div class="details">
-                <h2>Formal Trousers</h2>
-                <p>Dark Grey</p>
-                <p>Price: $126</p>
-                <a href="#" class="button">Add to Cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="uniform2.jpg" alt="School Uniform 2">
-            <div class="details">
-                <h2>School Shorts</h2>
-                <p>Black</p>
-                <p>Price: $44</p>
-                <a href="#" class="button">Add to Cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="https://gcdnb.pbrd.co/images/8KVOuTnLPJfq.jpg?o=1" alt="Jersey Image">
-            <div class="details">
-                <h2>Jersey</h2>
-                <p>Grey, V neck</p>
-                <p>Price: $105</p>
-                <a href="" class="button">Add to Cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="uniform2.jpg" alt="School Uniform 2">
-            <div class="details">
-                <h2>School Shirt</h2>
-                <p>White, pointed collar</p>
-                <p>Price: $35</p>
-                <a href="#" class="button">Add to Cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="uniform2.jpg" alt="School Uniform 2">
-            <div class="details">
-                <h2>School Socks</h2>
-                <p>Black and white striped</p>
-                <p>Price: $12</p>
-                <a href="#" class="button">Add to Cart</a>
-            </div>
-        </div>
-        <div class="product">
-            <img src="uniform2.jpg" alt="School Uniform 2">
-            <div class="details">
-                <h2>College Tie</h2>
-                <p>Black and white striped</p>
-                <p>Price: $37</p>
-                <a href="#" class="button">Add to Cart</a>
-            </div>
-        </div>
-    </div>
-    <footer>
-        &copy; 2023 CC Uniform Shop. All rights reserved.
+    <div class="container"> <!-- This division contains the main uniform content of the website -->
+        <div class="product"> <!-- Start of product container -->
+            <img src="https://gcdnb.pbrd.co/images/BWmJDAGjOCXS.png?o=1" alt="Junior Blazer Image"> <!-- Displays product image -->
+            <div class="details"> <!-- Start of product details -->
+                <h2>Junior Blazer</h2> <!-- Product name -->
+                <p>Black and white striped</p> <!-- Product description -->
+                <p>Price: $350</p> <!-- Product price -->
+                <a href="#" class="button">Add to Cart</a> <!-- Add to Cart button -->
+            </div> <!-- End of product details division -->
+        </div> <!-- End of product container division -->
+        <div class="product"> <!-- Start of product container -->
+            <img src="https://gcdnb.pbrd.co/images/6c3XK9TfVrKE.png?o=1" alt="Senior Blazer Image"> <!-- Displays product image -->
+            <div class="details"> <!-- Start of product details -->
+                <h2>Senior Blazer</h2> <!-- Product name -->
+                <p>Black and white striped</p> <!-- Product description -->
+                <p>Price: $350</p> <!-- Product price -->
+                <a href="#" class="button">Add to Cart</a> <!-- Add to Cart button -->
+            </div> <!-- End of product details division -->
+        </div> <!-- End of product container division -->
+        <div class="product"> <!-- Start of product container -->
+            <img src="https://gcdnb.pbrd.co/images/8RmxGsMCHt1R.png?o=1" alt="Formal Jacket Image"> <!-- Displays product image -->
+            <div class="details"> <!-- Start of product details -->
+                <h2>Formal Jacket</h2> <!-- Product name -->
+                <p>Dark Grey</p> <!-- Product description -->
+                <p>Price: $265</p> <!-- Product price -->
+                <a href="#" class="button">Add to Cart</a> <!-- Add to Cart button -->
+            </div> <!-- End of product details division -->
+        </div> <!-- End of product container division -->
+        <div class="product"> <!-- Start of product container -->
+            <img src="https://gcdnb.pbrd.co/images/1zox7lAycOnB.png?o=1" alt="Formal Trousers Image"> <!-- Displays product image -->
+            <div class="details"> <!-- Start of product details -->
+                <h2>Formal Trousers</h2> <!-- Product name -->
+                <p>Dark Grey</p> <!-- Product description -->
+                <p>Price: $126</p> <!-- Product price -->
+                <a href="#" class="button">Add to Cart</a> <!-- Add to Cart button -->
+            </div> <!-- End of product details division -->
+        </div> <!-- End of product container division -->
+        <div class="product"> <!-- Start of product container -->
+            <img src="https://gcdnb.pbrd.co/images/wPvz97su0QRv.png?o=1" alt="School Shorts Image"> <!-- Displays product image -->
+            <div class="details"> <!-- Start of product details -->
+                <h2>School Shorts</h2> <!-- Product name -->
+                <p>Black</p> <!-- Product description -->
+                <p>Price: $44</p> <!-- Product price -->
+                <a href="#" class="button">Add to Cart</a> <!-- Add to Cart button -->
+            </div> <!-- End of product details division -->
+        </div> <!-- End of product container division -->
+        <div class="product"> <!-- Start of product container -->
+            <img src="https://gcdnb.pbrd.co/images/8KVOuTnLPJfq.jpg?o=1" alt="Jersey Image"> <!-- Displays product image -->
+            <div class="details"> <!-- Start of product details -->
+                <h2>Jersey</h2> <!-- Product name -->
+                <p>Grey, V neck</p> <!-- Product description -->
+                <p>Price: $105</p> <!-- Product price -->
+                <a href="" class="button">Add to Cart</a> <!-- Add to Cart button -->
+            </div> <!-- End of product details division -->
+        </div> <!-- End of product container division -->
+        <div class="product"> <!-- Start of product container -->
+            <img src="https://gcdnb.pbrd.co/images/ZaFCZJTKcYwZ.png?o=1" alt="School Shirt Image"> <!-- Displays product image -->
+            <div class="details"> <!-- Start of product details -->
+                <h2>School Shirt</h2> <!-- Product name -->
+                <p>White, pointed collar</p> <!-- Product description -->
+                <p>Price: $35</p> <!-- Product price -->
+                <a href="#" class="button">Add to Cart</a> <!-- Add to Cart button -->
+            </div> <!-- End of product details division -->
+        </div> <!-- End of product container division -->
+        <div class="product"> <!-- Start of product container -->
+            <img src="https://gcdnb.pbrd.co/images/jGL3BiR40scI.png?o=1" alt="School Socks Image"> <!-- Displays product image -->
+            <div class="details"> <!-- Start of product details -->
+                <h2>School Socks</h2> <!-- Product name -->
+                <p>Black and white striped</p> <!-- Product description -->
+                <p>Price: $12</p> <!-- Product price -->
+                <a href="#" class="button">Add to Cart</a> <!-- Add to Cart button -->
+            </div> <!-- End of product details division -->
+        </div> <!-- End of product container division -->
+        <div class="product"> <!-- Start of product container -->
+            <img src="https://gcdnb.pbrd.co/images/Z3cl3Zh0ZizE.png?o=1" alt="College Tie Image"> <!-- Displays product image -->
+            <div class="details"> <!-- Start of product details -->
+                <h2>College Tie</h2> <!-- Product name -->
+                <p>Black and white striped</p> <!-- Product description -->
+                <p>Price: $37</p> <!-- Product price -->
+                <a href="#" class="button">Add to Cart</a> <!-- Add to Cart button -->
+            </div> <!-- End of product details division -->
+        </div> <!-- End of product container division -->
+        <div class="product"> <!-- Start of product container -->
+            <img src="https://gcdnb.pbrd.co/images/4QgsgErOcERE.png?o=1" alt="School Belt Image"> <!-- Displays product image -->
+            <div class="details"> <!-- Start of product details -->
+                <h2>School Belt</h2> <!-- Product name -->
+                <p>Black Leather</p> <!-- Product description -->
+                <p>Price: $29</p> <!-- Product price -->
+                <a href="#" class="button">Add to Cart</a> <!-- Add to Cart button -->
+            </div> <!-- End of product details division -->
+        </div> <!-- End of product container division -->
+        <div class="product"> <!-- Start of product container -->
+            <img src="https://gcdnb.pbrd.co/images/NfbZ1cBKIR8Z.png?o=1" alt="Supporter's Jersey Image"> <!-- Displays product image -->
+            <div class="details"> <!-- Start of product details -->
+                <h2>Supporter's Jersey</h2> <!-- Product name -->
+                <p>Black and White Striped</p> <!-- Product description -->
+                <p>Price: $135</p> <!-- Product price -->
+                <a href="#" class="button">Add to Cart</a> <!-- Add to Cart button -->
+            </div> <!-- End of product details division -->
+        </div> <!-- End of product container division-->
+        <div class="product"> <!-- Start of product container -->
+            <img src="https://gcdnb.pbrd.co/images/hkF5wogSuj04.png?o=1" alt="Sports Shorts Image"> <!-- Displays product image -->
+            <div class="details"> <!-- Start of product details -->
+                <h2>Sports Shorts</h2> <!-- Product name -->
+                <p>Black</p> <!-- Product description -->
+                <p>Price: $43</p> <!-- Product price -->
+                <a href="#" class="button">Add to Cart</a> <!-- Add to Cart button -->
+            </div> <!-- End of product details division -->
+        </div> <!-- End of product container division -->
+    </div> <!-- End of container division -->
+    <footer> <!-- Defines the footer section at the bottom of the page -->
+        &copy; 2023 CC Uniform Shop. All rights reserved. <!-- Displays copyright information -->
     </footer>
 </body>
 </html>

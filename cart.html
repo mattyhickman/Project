@@ -1,211 +1,215 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Defines the document type as HTML5 -->
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Cart - Christ's College Uniform Shop</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
-    <link rel="icon" href="https://gcdnb.pbrd.co/images/YJlixsuqMuE6.png?o=1" type="image/x-icon">
-    <style>
+    <meta charset="UTF-8"> <!-- This sets the character encoding to UTF-8 for special characters -->
+    <title>Cart - Christ's College Uniform Shop</title> <!-- This names the webpage that appears in the browser tab -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link to font-awesome, an icon library allowing icons to be added to the page -->
+    <link rel="icon" href="https://gcdnb.pbrd.co/images/mg4mI4hFp5vy.png?o=1" type="image/x-icon"> <!-- This sets a small image (favicon) for the browser tab -->
+    <style> /* This starts defining the page's CSS styles */
+       
+        /* Reset default browser styles for body section */
         body {
-            font-family: Georgia, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: Georgia, sans-serif; /* Sets the default font family */
+            margin: 0; /* Removes default margins */
+            padding: 0; /* Removes default padding */
         }
         
+         /* Styles the header section */
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 16px;
-            text-align: center;
-            height: 140px;
-            position: relative;
+            background-color: #333; /* Sets background colour to dark gray */
+            color: #fff; /* Sets text colour to white */
+            padding: 16px; /* Adds space around the content */
+            text-align: center; /* Center-aligns the text */
+            height: 140px; /* Sets the height of the header */
+            position: relative; /* Positions elements relatively */
         }
 
         .logo {
-            width: 90px;
-            height: auto;
-            margin-top: 8px;
+            width: 90px; /* Sets the width of the logo */
+            height: auto; /* Allows the logo's height to adjust proportionally */
+            margin-top: 8px; /* Adds spacing above the logo */
         }
  
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            margin-top: 10px;
+            max-width: 1200px; /* Sets the maximum width for the main content container */
+            margin: 0 auto; /* Centers the container horizontally */
+            padding: 20px; /* Adds padding around the container */
+            margin-top: 10px; /* Adds spacing above the container */
         }
     
         .cart-item {
-            display: flex;
-            align-items: center;
-            border-bottom: 1px solid #ccc;
-            padding: 10px;
+            display: flex; /* Uses a flexbox layout for cart items */
+            align-items: center; /* Aligns items centrally within cart items */
+            border-bottom: 1px solid #ccc; /* Adds a bottom border with a light gray color */
+            padding: 10px; /* Adds padding around cart items */
         }
     
         .cart-item img {
-            max-width: 100px;
-            margin-right: 20px;
+            max-width: 100px; /* Sets the maximum width for cart item images */
+            margin-right: 20px; /* Adds spacing to the right of cart item images */
         }
     
         .cart-item-details {
-            flex: 1;
+            flex: 1; /* Allows cart item details to expand and fill available space */
         }
     
         .cart-item h3 {
-            margin: 0;
+            margin: 0; /* Removes margin from cart item headings */
         }
     
         .cart-item p {
-            margin: 0;
+            margin: 0; /* Removes margin from cart item paragraphs */
+
         }
     
         .cart-total {
-            text-align: right;
-            margin-top: 20px;
-            font-size: 18px;
-            margin-bottom: 20px;
+            text-align: right; /* Right-aligns the cart total */
+            margin-top: 20px; /* Adds spacing above the cart total */
+            font-size: 18px; /* Sets the font size for the cart total */
+            margin-bottom: 20px; /* Adds spacing below the cart total */
         }
     
         .cart-total strong {
-            color: #333;
+            color: #333; /* Sets the color of the cart total text to dark gray */
         }
     
         footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
+            background-color: #333; /* Sets the background color for the footer */
+            color: #fff; /* Sets the text color to white */
+            padding: 20px; /* Adds padding around the footer content */
+            text-align: center; /* Centers the text within the footer */
         }
     
         .dropdown-menu {
-            position: absolute;
-            top: 20px;
-            left: 20px; 
+            position: absolute; /* Allows for absolute positioning */
+            top: 20px; /* Sets the distance from the top */
+            left: 20px; /* Sets the distance from the left */
         }
     
         .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 150px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-            font-size: 15px;
+            display: none; /* Initially hides the dropdown content */
+            position: absolute; /* Allows for absolute positioning */
+            background-color: #f9f9f9; /* Sets the background color for the dropdown content */
+            min-width: 150px; /* Sets the minimum width for the dropdown content */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Adds a box shadow */
+            z-index: 1; /* Sets the stacking order of the dropdown content */
+            font-size: 15px; /* Sets the font size for the dropdown content */
         }
 
         .dropdown-content a {
-            color: #333;
-            padding: 6px 8px;
-            text-decoration: none;
-            display: block;
+            color: #333; /* Sets the color for dropdown links */
+            padding: 6px 8px; /* Adds padding to dropdown links */
+            text-decoration: none; /* Removes underline from dropdown links */
+            display: block; /* Makes dropdown links block-level elements */
         }
 
         .dropdown-content a:hover {
-            background-color: #f1f1f1;
+            background-color: #f1f1f1; /* Sets the background color when hovering */
         }
 
         .dropdown-menu:hover .dropdown-content {
-            display: block;
+            display: block; /* Displays the dropdown content when the menu is hovered */
         }
     
         .search-container {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            top: 30px;
-            right: 20px;
+            display: flex; /* Uses a flexbox layout for the search container */
+            align-items: center; /* Aligns items centrally within the search container */
+            position: absolute; /* Allows for absolute positioning */
+            top: 30px; /* Sets the distance from the top */
+            right: 20px; /* Sets the distance from the right */
         }
 
         .search-container input[type="text"] {
-            padding: 8px;
-            border-radius: 4px;
-            border: none;
+            padding: 8px; /* Adds padding to the search bar */
+            border-radius: 4px; /* Rounds the corners of the search bar */
+            border: none; /* Removes the search bar border */
         }
 
         .search-container .search-button {
-            padding: 8px 12px;
-            background-color: #333;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            padding: 8px 12px; /* Adds padding to the search button */
+            background-color: #333; /* Sets the background colour for the search button to dark gray */
+            color: #fff; /* Sets the text color to white */
+            border: none; /* Removes the button border */
+            border-radius: 4px; /* Rounds the corners of the button */
+            cursor: pointer; /* Changes cursor to a pointer when hovering */
         }
 
         .search-container .search-button:hover {
-            background-color: #555;
+            background-color: #555; /* Sets the background colour when hovering */
         }
     
         .dropdown-icon {
-            font-size: 25px;
-            cursor: pointer;
-            padding: 8px;
-            transition: background-color 0.3s;
+            font-size: 25px; /* Sets the size for the dropdown icon */
+            cursor: pointer; /* Changes cursor to a pointer */
+            padding: 8px; /* Adds padding around the dropdown icon */
+            transition: background-color 0.3s; /* Adds a smooth transition when hovering */
         }
 
         .dropdown-icon:hover {
-            background-color: #555;
+            background-color: #555; /* Sets the background colour when hovering */
         }
 
     </style>
 </head>
     
-<body>
-    <header>
-        <div class="dropdown-menu">
-            <div class="dropdown-icon">&#9776;</div>
-            <div class="dropdown-content">
-                <a href="https://christscollege.com/">Home</a>
-                <a href="https://online.flippingbook.com/view/221547692/">About</a>
-                <a href="Index.html">Uniform</a>
+<body> <!-- Defines the main body section of the page -->
+    <header> <!-- Defines the header section at the top of the page -->
+        <div class="dropdown-menu"> <!-- This divison defines the dropdown menu -->
+            <div class="dropdown-icon">&#9776;</div> <!-- Sets a hamburger icon for the dropdown menu -->
+            <div class="dropdown-content"> <!-- This divison defines the dropdown content -->
+                <a href="https://christscollege.com/">Home</a> <!-- Creates a link to Christ's College homepage -->
+                <a href="https://online.flippingbook.com/view/221547692/">About</a> <!-- Creates a link to the CC Uniform Shop Booklet -->
+                <a href="Index.html">Uniform</a> <!-- Creates a link to the main uniform shop page indext.html -->
             </div>
         </div>
-        <a href="index.html">
-            <img src="https://gcdnb.pbrd.co/images/YJlixsuqMuE6.png?o=1" alt="Logo" class="logo">
+        <a href="index.html"> <!-- Creates a link to the homepage -->
+            <img src="https://gcdnb.pbrd.co/images/mg4mI4hFp5vy.png?o=1" alt="Logo" class="logo"> <!-- Displays the logo image and attatches an alternative text -->
         </a>
-        <div class="search-container">
-            <input type="text" placeholder="Search">
-            <button class="search-button">
-                <i class="fas fa-search"></i>
+        <div class="search-container"> <!-- This division contains the search bar and cart button -->
+            <input type="text" placeholder="Search"> <!-- Creates the search bar -->
+            <button class="search-button"> <!-- Creates a search button -->
+                <i class="fas fa-search"></i> <!-- Adds a search icon -->
             </button>
         </div>
 
     </header>
   
-    <div class="container">
-        <h2>Shopping Cart</h2>
-        <div class="cart-item">
-            <img src="https://gcdnb.pbrd.co/images/BWmJDAGjOCXS.png?o=1" alt="Junior Blazer Image">
-            <div class="cart-item-details">
-                <h3>Junior Blazer</h3>
-                <p>Black and white striped</p>
-                <p>Price: $350</p>
+    <div class="container"> <!-- This division contains the main cart items content of the page -->
+        <h2>Shopping Cart</h2> <!-- Shopping cart heading -->
+        <div class="cart-item"> <!-- This division defines as a cart item -->
+            <img src="https://gcdnb.pbrd.co/images/BWmJDAGjOCXS.png?o=1" alt="Junior Blazer Image"> <!-- Displays product image -->
+            <div class="cart-item-details"> <!-- This division defines the cart item details -->
+                <h3>Junior Blazer</h3> <!-- Product name -->
+                <p>Black and white striped</p> <!-- Product description -->
+                <p>Price: $350</p> <!-- Product price -->
             </div>
         </div>
     
-        <div class="cart-item">
-            <img src="https://gcdnb.pbrd.co/images/6c3XK9TfVrKE.png?o=1" alt="Senior Blazer Image">
-            <div class="cart-item-details">
-                <h3>Senior Blazer</h3>
-                <p>Black and white striped</p>
-                <p>Price: $350</p>
+        <div class="cart-item"> <!-- This division defines as a cart item -->
+            <img src="https://gcdnb.pbrd.co/images/6c3XK9TfVrKE.png?o=1" alt="Senior Blazer Image"> <!-- Displays product image -->
+            <div class="cart-item-details"> <!-- This division defines the cart item details -->
+                <h3>Senior Blazer</h3> <!-- Product name -->
+                <p>Black and white striped</p> <!-- Product description -->
+                <p>Price: $350</p> <!-- Product price -->
             </div>
         </div>
           
-        <div class="cart-item">
-            <img src="https://gcdnb.pbrd.co/images/8RmxGsMCHt1R.png?o=1" alt="Formal Jacket Image">
-            <div class="cart-item-details">
-                <h3>Formal Jacket</h3>
-                <p>Dark Grey</p>
-                <p>Price: $265</p>
+        <div class="cart-item"> <!-- This division defines as a cart item -->
+            <img src="https://gcdnb.pbrd.co/images/8RmxGsMCHt1R.png?o=1" alt="Formal Jacket Image"> <!-- Displays product image -->
+            <div class="cart-item-details"> <!-- This division defines the cart item details -->
+                <h3>Formal Jacket</h3> <!-- Product name -->
+                <p>Dark Grey</p> <!-- Product description -->
+                <p>Price: $265</p> <!-- Product price -->
             </div>
         </div> 
     
-        <div class="cart-total">
-            <strong>Total: $965</strong>
+        <div class="cart-total"> <!-- This division defines the cart total -->
+            <strong>Total: $965</strong> <!-- Cart total -->
         </div>
     </div>
   
-    <footer>
-        &copy; 2023 CC Uniform Shop. All rights reserved.
+    <footer> <!-- Defines the footer section at the bottom of the page -->
+        &copy; 2023 CC Uniform Shop. All rights reserved. <!-- Displays copyright information -->
     </footer>
 </body>
 </html>
